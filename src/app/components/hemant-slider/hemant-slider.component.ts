@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hemant-slider',
@@ -7,14 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HemantSliderComponent {
   public rightVisible: number = 0;
+  @Input() public width: number = 700;
 
   public right(scrollable: HTMLDivElement): void {
     this.rightVisible = scrollable.scrollLeft;
-    scrollable.scrollLeft += 700;
-    this.rightVisible += 700;
+    scrollable.scrollLeft += this.width;
+    this.rightVisible += this.width;
   }
   public left(scrollable: HTMLDivElement): void {
-    scrollable.scrollLeft -= 700;
-    this.rightVisible -= 700;
+    scrollable.scrollLeft -= this.width;
+    this.rightVisible -= this.width;
   }
 }

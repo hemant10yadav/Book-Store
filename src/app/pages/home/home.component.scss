@@ -12,6 +12,7 @@
   }
 
   .title {
+    position: absolute;
     top: 10%;
     left: 3%;
   }
@@ -23,4 +24,14 @@
 
 .last-img {
   right: 3%;
+}
+
+.section {
+  position: relative;
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    left: 3%;
+  }
 }

@@ -1,0 +1,19 @@
+.widget {
+  width: 190px;
+  height: 380px;
+  border-radius: 12px;
+  background: transparent;
+  transition: display 0.3s ease;
+
+  &-button {
+    display: none;
+    transition: display 0.8s ease-in;
+  }
+}
+
+.widget:hover {
+  background: #edf2ff;
+  .widget-button {
+    display: block;
+  }
+}

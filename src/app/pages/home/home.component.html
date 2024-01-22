@@ -1,4 +1,4 @@
-<section>
+<section class="pb-5">
   <div class="mt-4">
     <app-hemant-slider>
       <ng-container *ngFor="let arrival of newArrivals">
@@ -7,8 +7,8 @@
     </app-hemant-slider>
   </div>
 
-  <div class="mt-5 gradient d-grid px-5 position-relative">
-    <div class="fs-24 position-absolute title fw-500">Browse by Age Group</div>
+  <div class="mt-5 gradient section d-grid px-5 position-relative">
+    <div class="title">Browse by Age Group</div>
     <div class="d-flex justify-content-between w-100 pe-5 me-5">
       <img
         style="height: 112px"
@@ -54,5 +54,14 @@
     </div>
   </div>
 
-  
+  <div class="mt-5 section">
+    <div class="title">Top 10 Books</div>
+    <div class="mt-5 pe-5">
+      <app-hemant-slider [width]="190">
+        <ng-container *ngFor="let book of books">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
 </section>

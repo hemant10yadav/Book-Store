@@ -1,14 +1,15 @@
 .scrollable-content {
   scrollbar-width: none;
-  overflow-x: scroll;
+  overflow-x: scroll !important;
   scroll-behavior: smooth;
 }
 
 .scrollable-content::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 .round-button {
+  color: #3b72ff;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -20,4 +21,5 @@
   border-radius: 50%;
   background: #ffffff;
   z-index: 111;
+  -webkit-text-stroke: 1px;
 }

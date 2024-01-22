@@ -1,18 +1,17 @@
-
 <div class="position-relative">
   <div #scrollable class="d-flex scrollable-content gap-5 p-3">
     <ng-content></ng-content>
   </div>
   <div
-    *ngIf="rightVisible"
     (click)="left(scrollable)"
+    *ngIf="rightVisible"
     class="round-button start-0 clickable"
   >
     <i class="bi bi-chevron-left"></i>
   </div>
   <div
-    *ngIf="rightVisible + scrollable.clientWidth < scrollable.scrollWidth - 1"
     (click)="right(scrollable)"
+    *ngIf="rightVisible + scrollable.clientWidth < scrollable.scrollWidth - 1"
     class="round-button right end-0 clickable"
   >
     <i class="bi bi-chevron-right"></i>

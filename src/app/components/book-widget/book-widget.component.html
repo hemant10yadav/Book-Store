@@ -1,0 +1,13 @@
+<div class="widget px-2 py-3 clickable">
+  <img alt="book" [src]="book.image" />
+  <span class="mt-2 d-block fs-16 fw-600">{{ book.title }}</span>
+  <div class="mt-1">
+    <app-rating [ratings]="book.ratings" [user]="book.user"></app-rating>
+  </div>
+  <div class="widget-button">
+    <app-wish-list-button
+      [topMargin]="'mt-3'"
+      [buttonWidth]="'w-100'"
+    ></app-wish-list-button>
+  </div>
+</div>

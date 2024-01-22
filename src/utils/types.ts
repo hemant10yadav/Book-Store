@@ -7,3 +7,10 @@ export interface NewArrival {
   description: string;
   image: string;
 }
+
+export interface Book {
+  title: string;
+  ratings: string;
+  user: number;
+  image: string;
+}

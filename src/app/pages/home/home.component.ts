@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewArrival } from '../../../utils/types';
+import { Book, NewArrival } from '../../../utils/types';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,6 @@ import { NewArrival } from '../../../utils/types';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public rightVisible: number = 0;
   public newArrivals: NewArrival[] = [
     {
       arrival: 'New Arrival',
@@ -41,13 +40,67 @@ export class HomeComponent {
     },
   ];
 
-  public right(scrollable: HTMLDivElement): void {
-    this.rightVisible = scrollable.scrollLeft;
-    scrollable.scrollLeft += 700;
-    this.rightVisible += 700;
-  }
-  public left(scrollable: HTMLDivElement): void {
-    scrollable.scrollLeft -= 700;
-    this.rightVisible -= 700;
-  }
+  public books: Book[] = [
+    {
+      title: 'There’s Coriander in my Sugar Pot!',
+      ratings: '4.5',
+      user: 4126,
+      image: 'assets/img/book1.png',
+    },
+    {
+      title: 'Can I Play Too? Elephant and Piggie',
+      ratings: '4.3',
+      user: 1126,
+      image: 'assets/img/book2.png',
+    },
+    {
+      title: 'The Last Bear by Hanna Gold!',
+      ratings: '3.5',
+      user: 2126,
+      image: 'assets/img/book3.png',
+    },
+    {
+      title: 'Billy’s Bravery by Tom Percival',
+      ratings: '4.2',
+      user: 3126,
+      image: 'assets/img/book4.png',
+    },
+    {
+      title: 'Over the River: A Turkey’s Tale',
+      ratings: '4.0',
+      user: 2186,
+      image: 'assets/img/book5.png',
+    },
+
+    {
+      title: 'There’s Coriander in my Sugar Pot!',
+      ratings: '4.5',
+      user: 4126,
+      image: 'assets/img/book1.png',
+    },
+    {
+      title: 'Can I Play Too? Elephant and Piggie',
+      ratings: '4.3',
+      user: 1126,
+      image: 'assets/img/book2.png',
+    },
+    {
+      title: 'The Last Bear by Hanna Gold!',
+      ratings: '3.5',
+      user: 2126,
+      image: 'assets/img/book3.png',
+    },
+    {
+      title: 'Billy’s Bravery by Tom Percival',
+      ratings: '4.2',
+      user: 3126,
+      image: 'assets/img/book4.png',
+    },
+    {
+      title: 'Over the River: A Turkey’s Tale',
+      ratings: '4.0',
+      user: 2186,
+      image: 'assets/img/book5.png',
+    },
+  ];
 }
