@@ -1,0 +1,26 @@
+.gradient {
+  height: 188px;
+  background: linear-gradient(
+    to left,
+    rgba(249, 242, 255, 1),
+    rgba(224, 236, 255, 1),
+    rgba(235, 255, 250, 1)
+  );
+
+  img {
+    height: 152px;
+  }
+
+  .title {
+    top: 10%;
+    left: 3%;
+  }
+}
+
+.age-box {
+  margin-bottom: 40px;
+}
+
+.last-img {
+  right: 3%;
+}

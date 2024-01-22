@@ -7,29 +7,16 @@
   &-inner {
     width: 100%; // Take full width of the parent
     display: flex;
+    margin-left: 10px;
     border-radius: 40px;
     height: 290px;
     transition: height 0.3s ease;
-
-    &:hover {
-      height: 360px;
-      .widget-image {
-        transform: translateY(-50%) rotate(3deg);
-      }
-      .widget-body {
-        top: 10%;
-      }
-      .widget-button {
-        display: block;
-      }
-    }
   }
 
   &-image {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
   }
 
   &-body {
@@ -42,6 +29,25 @@
   &-button {
     display: none;
     transition: display 0.8s ease-in;
+  }
+}
+
+.widget:hover {
+  .widget-inner {
+    margin-left: 0;
+    height: 360px;
+  }
+
+  .widget-image {
+    transform: translateY(-50%) rotate(3deg);
+  }
+
+  .widget-body {
+    top: 10%;
+  }
+
+  .widget-button {
+    display: block;
   }
 }
 

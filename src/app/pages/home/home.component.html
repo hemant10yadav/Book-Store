@@ -1,10 +1,58 @@
 <section>
-  <div>
-    <ng-container *ngFor="let arrival of newArrivals">
-      <app-new-arrival-widget [arrival] = 'arrival'
-      ></app-new-arrival-widget>
-    </ng-container>
+  <div class="mt-4">
+    <app-hemant-slider>
+      <ng-container *ngFor="let arrival of newArrivals">
+        <app-new-arrival-widget [arrival]="arrival"></app-new-arrival-widget>
+      </ng-container>
+    </app-hemant-slider>
   </div>
+
+  <div class="mt-5 gradient d-grid px-5 position-relative">
+    <div class="fs-24 position-absolute title fw-500">Browse by Age Group</div>
+    <div class="d-flex justify-content-between w-100 pe-5 me-5">
+      <img
+        style="height: 112px"
+        alt="child image"
+        class="mt-auto"
+        src="assets/img/child1.png"
+      />
+      <div class="age-box d-flex gap-3 mt-auto">
+        <app-browse-by-age [lowerLimit]="0" [upperLimit]="1">
+        </app-browse-by-age>
+        <app-browse-by-age [lowerLimit]="1" [upperLimit]="3">
+        </app-browse-by-age>
+      </div>
+      <img
+        style="height: 115px"
+        class="mt-auto"
+        alt="child image"
+        src="assets/img/child2.png"
+      />
+      <div class="age-box d-flex gap-3 mt-auto">
+        <app-browse-by-age [lowerLimit]="3" [upperLimit]="6">
+        </app-browse-by-age>
+        <app-browse-by-age [lowerLimit]="6" [upperLimit]="9">
+        </app-browse-by-age>
+      </div>
+      <img
+        style="height: 173px"
+        class="mt-auto"
+        alt="child image"
+        src="assets/img/child3.png"
+      />
+      <div class="age-box d-flex gap-3 mt-auto me-5 pe-5">
+        <app-browse-by-age [lowerLimit]="9" [upperLimit]="12">
+        </app-browse-by-age>
+        <app-browse-by-age [lowerLimit]="12"> </app-browse-by-age>
+      </div>
+      <img
+        class="mt-auto position-absolute bottom-0 last-img"
+        style="height: 200px"
+        alt="child image"
+        src="assets/img/child4.png"
+      />
+    </div>
+  </div>
+
+  
 </section>
-
-
