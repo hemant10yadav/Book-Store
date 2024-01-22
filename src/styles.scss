@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.app-padding {
+  padding: 0 4% 0 4%;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: #3b72ff;
+}
+
+.bg-lightBlue {
+  background: #edf2ff;
+}
+
+.separator {
+  display: inline-block;
+  border: 1px solid #0000001f;
+  width: 1px;
+  height: 22px;
+}

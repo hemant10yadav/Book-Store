@@ -1,0 +1,26 @@
+<section class="widget d-flex align-items-center">
+  <div class="widget-inner bg-lightBlue">
+    <div class="widget-image">
+      <img alt="..." src="assets/img/yellow.png" />
+    </div>
+    <div class="widget-body pe-5">
+      <div class="d-flex gap-2">
+        <div class="arrival">{{ arrival.arrival }}</div>
+        <div class="age-group">{{ arrival.ageGroup }}</div>
+      </div>
+      <div class="fs-24 fw-600 title">{{ arrival.title }}</div>
+      <app-rating
+        [ratings]="arrival.ratings"
+        [user]="arrival.user"
+      ></app-rating>
+      <div class="mt-1 fs-14">
+        <div class="m-0 p-0 text-wrap pe-3">
+          {{ arrival.description }}<span class="fw-500">Read More</span>
+        </div>
+      </div>
+      <div class="widget-button">
+        <app-wish-list-button [topMargin]="'mt-3'"></app-wish-list-button>
+      </div>
+    </div>
+  </div>
+</section>
