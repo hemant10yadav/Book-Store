@@ -8,4 +8,5 @@ import { Book } from '../../../utils/types';
 })
 export class BookWidgetComponent {
   @Input() public book!: Book;
+  @Input() public index!: number;
 }

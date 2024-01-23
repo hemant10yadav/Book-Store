@@ -15,6 +15,8 @@
     position: absolute;
     top: 10%;
     left: 3%;
+    font-size: 24px;
+    font-weight: 600;
   }
 }
 
@@ -27,11 +29,10 @@
 }
 
 .section {
-  position: relative;
+  margin-top: 3rem;
+  margin-left: 3%;
   .title {
     font-size: 24px;
     font-weight: 600;
-    position: absolute;
-    left: 3%;
   }
 }

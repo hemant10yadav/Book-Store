@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class HemantSliderComponent {
   public rightVisible: number = 0;
   @Input() public width: number = 700;
+  @Input() public gap : '5rem' | '2rem' | '7rem' = '5rem'
 
   public right(scrollable: HTMLDivElement): void {
     this.rightVisible = scrollable.scrollLeft;

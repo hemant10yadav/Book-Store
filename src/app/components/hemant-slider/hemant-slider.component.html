@@ -1,5 +1,5 @@
 <div class="position-relative">
-  <div #scrollable class="d-flex scrollable-content gap-5 p-3">
+  <div #scrollable [ngStyle]="{ gap }" class="d-flex scrollable-content p-3">
     <ng-content></ng-content>
   </div>
   <div

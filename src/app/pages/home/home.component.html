@@ -7,7 +7,7 @@
     </app-hemant-slider>
   </div>
 
-  <div class="mt-5 gradient section d-grid px-5 position-relative">
+  <div class="mt-5 gradient position-relative d-grid px-5">
     <div class="title">Browse by Age Group</div>
     <div class="d-flex justify-content-between w-100 pe-5 me-5">
       <img
@@ -54,12 +54,12 @@
     </div>
   </div>
 
-  <div class="mt-5 section">
+  <div class="section">
     <div class="title">Top 10 Books</div>
-    <div class="mt-5 pe-5">
+    <div>
       <app-hemant-slider [width]="190">
-        <ng-container *ngFor="let book of books">
-          <app-book-widget [book]="book"></app-book-widget>
+        <ng-container *ngFor="let book of books; index as i">
+          <app-book-widget [index]="i + 1" [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>
     </div>

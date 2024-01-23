@@ -1,13 +1,33 @@
 <div class="widget px-2 py-3 clickable">
-  <img alt="book" [src]="book.image" />
-  <span class="mt-2 d-block fs-16 fw-600">{{ book.title }}</span>
-  <div class="mt-1">
-    <app-rating [ratings]="book.ratings" [user]="book.user"></app-rating>
+  <div *ngIf="index" class="widget-number">
+    <div class="position-relative">
+      <div class="position-absolute text-danger white-num top-0 fs-130 jua">
+        {{ index }}
+      </div>
+      <div class="position-absolute blue-num top-0 fs-130 jua">
+        {{ index }}
+      </div>
+    </div>
+    <!--  <div class="position-relative">
+      <div class="circles">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </div>
+    </div> -->
   </div>
-  <div class="widget-button">
-    <app-wish-list-button
-      [topMargin]="'mt-3'"
-      [buttonWidth]="'w-100'"
-    ></app-wish-list-button>
+  <div [ngClass]="!index ? 'start-0' : 'index'" class="widget-body">
+    <img [src]="book.image" alt="book" />
+    <div class="p-2">
+      <span class="mt-2 d-block fs-16 fw-600">{{ book.title }}</span>
+      <div class="mt-1">
+        <app-rating [ratings]="book.ratings" [user]="book.user"></app-rating>
+      </div>
+      <div class="widget-button">
+        <app-wish-list-button
+          [buttonWidth]="'w-100'"
+          [topMargin]="'mt-3'"
+        ></app-wish-list-button>
+      </div>
+    </div>
   </div>
 </div>
