@@ -36,3 +36,20 @@
     font-weight: 600;
   }
 }
+
+.popularSeries {
+  height: 1020px;
+  background: rgb(78, 129, 255);
+  background: linear-gradient(
+    60deg,
+    rgba(78, 129, 255, 1) 0%,
+    rgba(11, 27, 69, 1) 49%,
+    rgba(11, 27, 69, 1) 73%,
+    rgba(240, 137, 157, 1) 100%,
+    rgba(157, 60, 253, 1) 100%
+  );
+}
+
+.pt-6 {
+  padding-top: 4rem;
+}

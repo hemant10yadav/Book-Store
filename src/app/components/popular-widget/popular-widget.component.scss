@@ -1,0 +1,27 @@
+.widget {
+  opacity: 40%;
+  &:hover {
+    img {
+      width: 100%;
+      border: 2px solid transparent;
+      outline: white solid 3px;
+      border-radius: 12px;
+    }
+    opacity: 1;
+    width: 240px;
+    height: 331.107px;
+    animation: enlarge 0.9s;
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+    width: 240px;
+    height: 331.107px;
+  }
+}

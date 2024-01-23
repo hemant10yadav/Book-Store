@@ -13,4 +13,6 @@ export interface Book {
   ratings: string;
   user: number;
   image: string;
+
+  count: number;
 }

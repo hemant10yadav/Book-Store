@@ -6,6 +6,7 @@ import { WishListButtonComponent } from './wish-list-button/wish-list-button.com
 import { HemantSliderComponent } from './hemant-slider/hemant-slider.component';
 import { BrowseByAgeComponent } from './browse-by-age/browse-by-age.component';
 import { BookWidgetComponent } from './book-widget/book-widget.component';
+import { PopularWidgetComponent } from './popular-widget/popular-widget.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BookWidgetComponent } from './book-widget/book-widget.component';
     WishListButtonComponent,
     HemantSliderComponent,
     BrowseByAgeComponent,
-    BookWidgetComponent
+    BookWidgetComponent,
+    PopularWidgetComponent
   ],
   exports: [
     NewArrivalWidgetComponent,
@@ -23,7 +25,8 @@ import { BookWidgetComponent } from './book-widget/book-widget.component';
     WishListButtonComponent,
     HemantSliderComponent,
     BrowseByAgeComponent,
-    BookWidgetComponent
+    BookWidgetComponent,
+    PopularWidgetComponent
   ],
   imports: [
     CommonModule

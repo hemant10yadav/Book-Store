@@ -1,0 +1,9 @@
+<div [ngClass]="mode" class="widget clickable">
+  <div class="widget-body">
+    <img alt="Book Image" [src]="book.image" />
+    <div class="mt-2">
+      <span class="fs-16 d-block">{{ book.title }}</span>
+      <span class="fs-14 mt-3 d-block">{{ book.count }} books</span>
+    </div>
+  </div>
+</div>

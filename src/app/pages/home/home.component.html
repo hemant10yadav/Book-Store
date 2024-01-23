@@ -58,8 +58,68 @@
     <div class="title">Top 10 Books</div>
     <div>
       <app-hemant-slider [width]="190">
-        <ng-container *ngFor="let book of books; index as i">
+        <ng-container *ngFor="let book of getBooks(); index as i">
           <app-book-widget [index]="i + 1" [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+
+  <div class="popularSeries">
+    <div class="section">
+      <div class="title text-white">Popular Series</div>
+      <div>
+        <app-hemant-slider [gap]="'2rem'" [width]="190">
+          <ng-container *ngFor="let book of getBooks(); index as i">
+            <app-popular-widget
+              [mode]="'dark'"
+              [book]="book"
+            ></app-popular-widget>
+          </ng-container>
+        </app-hemant-slider>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="title text-white">Elephant and Piggie</div>
+      <div>
+        <app-hemant-slider [gap]="'2rem'" [width]="190">
+          <ng-container *ngFor="let book of getBooks(); index as i">
+            <app-book-widget [mode]="'dark'" [book]="book"></app-book-widget>
+          </ng-container>
+        </app-hemant-slider>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">Best Sellers</div>
+    <div>
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks(); index as i">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">New Arrivals</div>
+    <div>
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks(); index as i">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">Peppa Pig</div>
+    <div>
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks(); index as i">
+          <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>
     </div>

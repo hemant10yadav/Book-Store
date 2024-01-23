@@ -1,3 +1,11 @@
+.dark {
+  .widget:hover {
+    .widget-body {
+      background: #0b1b45 !important;
+    }
+  }
+}
+
 .widget {
   width: 190px;
   height: 380px;

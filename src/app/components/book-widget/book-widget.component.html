@@ -1,4 +1,4 @@
-<div class="widget px-2 py-3 clickable">
+<div [ngClass]="mode" class="widget px-2 py-3 clickable">
   <div *ngIf="index" class="widget-number">
     <div class="position-relative">
       <div class="position-absolute text-danger white-num top-0 fs-130 jua">
@@ -30,4 +30,7 @@
       </div>
     </div>
   </div>
+
+
+
 </div>

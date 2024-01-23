@@ -1,13 +1,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jua&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Jua&display=swap");
 
 * {
   font-family: "Inter", sans-serif;
 }
 
 .jua {
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .app-padding {
@@ -55,4 +55,8 @@
   border: 1px solid #0000001f;
   width: 1px;
   height: 22px;
+}
+
+.dark {
+  color: white;
 }
