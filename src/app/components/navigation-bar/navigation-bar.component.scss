@@ -11,3 +11,19 @@ nav {
   max-width: 380px;
 }
 
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 56px; /* Adjust this value based on your navbar height */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust the overlay color and transparency */
+  }
+}

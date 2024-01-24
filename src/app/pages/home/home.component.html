@@ -17,18 +17,8 @@
         style="height: 112px"
       />
       <div class="age-box d-flex gap-3 mt-auto">
-        <app-age-widget
-          (click)="navToBrowseByAge(0, 1)"
-          [lowerLimit]="0"
-          [upperLimit]="1"
-        >
-        </app-age-widget>
-        <app-age-widget
-          (click)="navToBrowseByAge(1, 3)"
-          [lowerLimit]="1"
-          [upperLimit]="3"
-        >
-        </app-age-widget>
+        <app-age-widget [lowerLimit]="0" [upperLimit]="1"> </app-age-widget>
+        <app-age-widget [lowerLimit]="1" [upperLimit]="3"> </app-age-widget>
       </div>
       <img
         alt="child image"
@@ -37,18 +27,8 @@
         style="height: 115px"
       />
       <div class="age-box d-flex gap-3 mt-auto">
-        <app-age-widget
-          (click)="navToBrowseByAge(3, 6)"
-          [lowerLimit]="3"
-          [upperLimit]="6"
-        >
-        </app-age-widget>
-        <app-age-widget
-          (click)="navToBrowseByAge(6, 9)"
-          [lowerLimit]="6"
-          [upperLimit]="9"
-        >
-        </app-age-widget>
+        <app-age-widget [lowerLimit]="3" [upperLimit]="6"> </app-age-widget>
+        <app-age-widget [lowerLimit]="6" [upperLimit]="9"> </app-age-widget>
       </div>
       <img
         alt="child image"
@@ -57,16 +37,8 @@
         style="height: 173px"
       />
       <div class="age-box d-flex gap-3 mt-auto me-5 pe-5">
-        <app-age-widget
-          (click)="navToBrowseByAge(9, 12)"
-          [lowerLimit]="9"
-          [upperLimit]="12"
-        >
-        </app-age-widget>
-        <app-age-widget
-          (click)="navToBrowseByAge(12)"
-          [lowerLimit]="12"
-        ></app-age-widget>
+        <app-age-widget [lowerLimit]="9" [upperLimit]="12"> </app-age-widget>
+        <app-age-widget [lowerLimit]="12"></app-age-widget>
       </div>
       <img
         alt="child image"

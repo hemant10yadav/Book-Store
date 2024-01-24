@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Book, NewArrival } from '../../../utils/types';
-import * as stream from 'stream';
 import { ContentService } from '../../service/content.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(
-    private cs: ContentService,
-    private router: Router,
-  ) {}
+  constructor(private cs: ContentService) {}
 
   public getBooks(): Book[] {
     return this.cs.getBooks();
@@ -21,14 +16,5 @@ export class HomeComponent {
 
   public getNewArrivals(): NewArrival[] {
     return this.cs.newArrivals;
-  }
-
-  public navToBrowseByAge(lowerLimit: number, upperLimit?: number): void {
-    this.router.navigate(['browse-by-age'], {
-      state: {
-        lowerLimit,
-        upperLimit,
-      },
-    });
   }
 }

@@ -5,12 +5,13 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: white;
 
-  &:hover {
-    background: #EDF2FF;
+  &:hover,
+  &.active {
+    background: #edf2ff;
     color: rgba(59, 114, 255, 1);
   }
 }
 
 .nv-10 {
- margin-top: -10px;
+  margin-top: -10px;
 }
