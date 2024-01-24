@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     new: [],
     best: [],
   };
+  public window = window;
   constructor(private cs: ContentService) {}
 
   public ngOnInit(): void {

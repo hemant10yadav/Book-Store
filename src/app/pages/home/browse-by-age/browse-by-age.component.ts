@@ -32,6 +32,7 @@ export class BrowseByAgeComponent implements OnInit {
     new: [],
     best: [],
   };
+  public window = window;
 
   public ngOnInit(): void {
     this.data.best = this.cs.getBooks();

@@ -57,7 +57,7 @@
   <div class="section mt-5">
     <div class="title">Top 10 Books</div>
     <div>
-      <app-hemant-slider [width]="190">
+      <app-hemant-slider [width]="600">
         <ng-container *ngFor="let book of data.top; index as i">
           <app-book-widget [book]="book" [index]="i + 1"></app-book-widget>
         </ng-container>
@@ -69,7 +69,7 @@
     <div class="section pt-6">
       <div class="title text-white">Popular Series</div>
       <div class="mt-5">
-        <app-hemant-slider [gap]="'3rem'" [width]="250">
+        <app-hemant-slider [gap]="'3rem'" [width]="window.screen.width/2">
           <ng-container *ngFor="let book of data?.popular; index as
            i">
             <app-popular-widget
@@ -86,7 +86,8 @@
     <div class="section mt-5">
       <div class="title text-white">Elephant and Piggie</div>
       <div class="mt-2">
-        <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <app-hemant-slider [gap]="'2rem'"
+                           [width]="window.screen.width/2">
           <ng-container *ngFor="let book of data.elephant; index as i">
             <app-book-widget [book]="book" [mode]="'dark'"></app-book-widget>
           </ng-container>
@@ -98,7 +99,8 @@
   <div class="section mt-5">
     <div class="title">Best Sellers</div>
     <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="190">
+      <app-hemant-slider [gap]="'2rem'"
+                         [width]="window.screen.width/2">
         <ng-container *ngFor="let book of data.best; index as i">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
@@ -109,7 +111,7 @@
   <div class="section">
     <div class="title">New Arrivals</div>
     <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="190">
+      <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width/2">
         <ng-container *ngFor="let book of data?.new; index as i">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
@@ -120,7 +122,7 @@
   <div class="section">
     <div class="title">Peppa Pig</div>
     <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="190">
+      <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width/2">
         <ng-container *ngFor="let book of data?.peppa; index as i">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
