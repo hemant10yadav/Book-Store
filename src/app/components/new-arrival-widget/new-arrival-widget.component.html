@@ -2,7 +2,10 @@
   <div class="widget-image">
     <img alt="..." [src]="arrival.image" />
   </div>
-  <div class="widget-inner bg-lightBlue">
+  <div
+    [ngClass]="index % 2 === 0 ? 'bg-lightBlue' : 'bg-lightPink'"
+    class="widget-inner bg-lightBlue"
+  >
     <div class="widget-body pe-5">
       <div class="d-flex gap-2">
         <div class="arrival">{{ arrival.arrival }}</div>

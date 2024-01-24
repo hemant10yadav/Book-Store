@@ -11,13 +11,35 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class BrowseByAgeComponent implements OnInit {
   public activeAge!: { lower: number; upper: number | undefined };
+
   constructor(
     private cs: ContentService,
     private location: Location,
     private actRoute: ActivatedRoute,
   ) {}
+  public data: {
+    popular: Book[];
+    top: Book[];
+    elephant: Book[];
+    peppa: Book[];
+    new: Book[];
+    best: Book[];
+  } = {
+    popular: [],
+    top: [],
+    elephant: [],
+    peppa: [],
+    new: [],
+    best: [],
+  };
 
   public ngOnInit(): void {
+    this.data.best = this.cs.getBooks();
+    this.data.new = this.cs.getBooks();
+    this.data.peppa = this.cs.getBooks();
+    this.data.elephant = this.cs.getBooks();
+    this.data.top = this.cs.getBooks();
+    this.data.popular = this.cs.getBooks();
     this.actRoute.queryParams.subscribe((param: Params) => {
       const { age } = param;
       this.activeAge = { lower: 0, upper: undefined };

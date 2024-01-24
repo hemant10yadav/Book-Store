@@ -9,4 +9,7 @@ import { NewArrival } from '../../../utils/types';
 export class NewArrivalWidgetComponent {
   @Input()
   public arrival!: NewArrival;
+
+  @Input()
+  public index = 0;
 }

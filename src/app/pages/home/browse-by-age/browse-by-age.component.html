@@ -5,7 +5,7 @@
       <span class="ms-3 fs-36 fw-600">Browse By Age Group</span>
     </div>
     <div class="mt-4">
-      <div *ngIf="activeAge" class="d-flex gap-3">
+      <div *ngIf="activeAge" class="d-flex flex-wrap gap-3">
         <app-age-widget
           [active]="isActive(0, 1)"
           [lowerLimit]="0"
@@ -43,7 +43,7 @@
     <div class="title">Best Sellers for {{ getAgeGroup() }} Years Old</div>
     <div class="mt-2">
       <app-hemant-slider [gap]="'2rem'" [width]="190">
-        <ng-container *ngFor="let book of getBooks()">
+        <ng-container *ngFor="let book of data.new">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>
@@ -54,7 +54,7 @@
     <div class="title">New Arrival for {{ getAgeGroup() }} Years Old</div>
     <div class="mt-2">
       <app-hemant-slider [gap]="'2rem'" [width]="190">
-        <ng-container *ngFor="let book of getBooks()">
+        <ng-container *ngFor="let book of data.peppa">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>
@@ -65,7 +65,7 @@
     <div class="title">Peppa Pig</div>
     <div class="mt-2">
       <app-hemant-slider [gap]="'2rem'" [width]="190">
-        <ng-container *ngFor="let book of getBooks()">
+        <ng-container *ngFor="let book of data.popular">
           <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>

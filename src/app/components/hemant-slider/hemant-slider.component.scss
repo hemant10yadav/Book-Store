@@ -22,4 +22,12 @@
   background: #ffffff;
   z-index: 111;
   -webkit-text-stroke: 1px;
+
+  &.left {
+    left: 5%;
+  }
+
+  &.right {
+    right: 5%;
+  }
 }

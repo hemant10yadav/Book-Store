@@ -21,7 +21,7 @@ export class ContentService {
     {
       arrival: 'New Arrival',
       ageGroup: '7-10 years',
-      title: "Harry Potter and the Sorcerer's Stone - J.K. Rowling",
+      title: 'Harry Potter',
       ratings: '4.9',
       user: 9876,
       description:

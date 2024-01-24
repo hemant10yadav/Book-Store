@@ -1,45 +1,112 @@
-<nav
-  class="app-padding d-flex align-items-center justify-content-between w-100"
->
-  <section class="d-flex gap-5 logo-box">
-    <img
-      alt="BrightRClub logo"
-      class="clickable"
-      src="assets/img/BrightR.Club.png"
-    />
-    <div
-      class="border rounded-3 bg-lightBlue flex-grow-1 input-group flex-nowrap search-box"
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <div class="container-fluid app-padding">
+    <a class="navbar-brand" href="/">
+      <img
+        alt="BrightRClub logo"
+        class="clickable"
+        src="assets/img/BrightR.Club.png"
+    /></a>
+    <div class="d-flex mx-auto me-lg-auto">
+      <div
+        class="my-2 border rounded-3 bg-lightBlue input-group flex-nowrap navSearch search-box"
+      >
+        <span class="input-group-text border-0 rounded-3 bg-transparent"
+          ><img alt="search" src="assets/icons/search.png"
+        /></span>
+        <input
+          class="bg-transparent border-0 shadow-none form-control border rounded-3"
+          placeholder="Search by author, title, age, genre..."
+          type="search"
+        />
+      </div>
+    </div>
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      data-bs-target="#navbarSupportedContent"
+      data-bs-toggle="collapse"
+      type="button"
     >
-      <span
-        class="input-group-text border-0 rounded-3 bg-transparent"
-        id="addon-wrapping"
-        ><img alt="search" src="assets/icons/search.png"
-      /></span>
-      <input
-        class="bg-lightBlue border-0 shadow-none form-control border rounded-3"
-        id="example-search-input"
-        placeholder="Search by author, title, age, genre..."
-        type="search"
-      />
-    </div>
-  </section>
-  <section class="d-flex justify-content-around">
-    <div class="fs-14 d-flex align-items-center gap-4 ms-auto fw-500">
-      <span class="clickable tab">Home</span>
-      <span class="clickable tab">Browse Library</span>
-      <span class="clickable tab">Book</span>
-      <span class="separator"></span>
-      <span class="clickable tab">My Books</span>
-      <div class="d-flex align-items-center gap-1">
-        <div class="clickable tab">
-          <div class="fs-12 text-end">Next Delivery</div>
-          <div>Mon, 15 Jan</div>
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
+      <div class="d-flex me-auto">
+        <div
+          class="collapsedSearch my-2 border rounded-3 bg-lightBlue input-group flex-nowrap search-box"
+        >
+          <span
+            class="input-group-text border-0 rounded-3 bg-transparent"
+            id="addon-wrapping"
+            ><img alt="search" src="assets/icons/search.png"
+          /></span>
+          <input
+            class="border-0 shadow-none form-control border rounded-3 bg-transparent"
+            id="example-search-input"
+            placeholder="Search by author, title, age, genre..."
+            type="search"
+          />
         </div>
-        <img alt="options" src="assets/icons/caret-down.png" />
       </div>
-      <div class="clickable">
-        <img alt="profile" src="assets/icons/dp.png" />
-      </div>
+      <ul class="navbar-nav d-flex align-items-center mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            aria-current="page"
+            class="nav-link fs-14 fw-500 text-dark"
+            routerLinkActive="activeLink"
+            routerLink="/"
+            [routerLinkActiveOptions]="{exact: true}"
+          >
+            Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-14 fw-500 text-dark"
+            routerLinkActive="activeLink"
+            routerLink="/browse-by-age"
+            >Browse Library</a
+          >
+        </li>
+        <li class="nav-item hide-collapse">
+          <a class="nav-link"><span class="separator"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-14 fw-500 text-dark" href="#">Book</a>
+        </li>
+        <li class="nav-item dropdown hide-collapse">
+          <a
+            aria-expanded="false"
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            data-bs-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <div class="text-dark">
+              <div class="fs-12 text-end">Next Delivery</div>
+              <div>Mon, 15 Jan</div>
+            </div>
+          </a>
+          <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item hide-collapse">
+          <a class="nav-link" href="#"
+            ><img alt="profile" src="assets/icons/dp.png"
+          /></a>
+        </li>
+        <li class="nav-item hide-collapse d-block d-lg-none">
+          <a class="nav-link fs-14 fw-500" href="#">Account</a>
+        </li>
+      </ul>
     </div>
-  </section>
+  </div>
 </nav>
