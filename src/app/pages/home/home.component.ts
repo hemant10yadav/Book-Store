@@ -27,17 +27,14 @@ export class HomeComponent implements OnInit {
   constructor(private cs: ContentService) {}
 
   public ngOnInit(): void {
-    this.data.best = this.cs.getBooks();
+    this.data.best = this.cs.getBooks().slice(0, 12);
     this.data.new = this.cs.getBooks();
-    this.data.peppa = this.cs.getBooks();
+    this.data.peppa = this.cs.getBooks().slice(0, 10);
     this.data.elephant = this.cs.getBooks();
-    this.data.top = this.cs.getBooks();
-    this.data.popular = this.cs.getBooks();
+    this.data.top = this.cs.getBooks().slice(0, 10);
+    this.data.popular = this.cs.getBooks().slice(0, 15);
   }
 
-  public getBooks(): Book[] {
-    return structuredClone(this.cs.getBooks());
-  }
 
   public getNewArrivals(): NewArrival[] {
     return this.cs.newArrivals;

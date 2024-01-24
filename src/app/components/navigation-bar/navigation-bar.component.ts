@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.scss'],
 })
-export class NavigationBarComponent {}
+export class NavigationBarComponent {
+  public closeNav(nav: HTMLElement): void {
+    nav.classList.remove('show');
+  }
+}
