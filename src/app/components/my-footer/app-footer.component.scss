@@ -1,0 +1,18 @@
+footer {
+  .body {
+    background: rgba(59, 114, 255, 1);
+    min-height: 280px;
+  }
+  .footer {
+    height: 63px;
+    background: #386bf0;
+  }
+
+  .tabs > div {
+    opacity: 70%;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}

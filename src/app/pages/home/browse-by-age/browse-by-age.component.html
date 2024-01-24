@@ -1,0 +1,55 @@
+<section>
+  <div class="app-x-margin mt-5">
+    <div>
+      <i class="bi bi-chevron-left fs-24"></i>
+      <span class="ms-3 fs-36 fw-600">Browse By Age Group</span>
+    </div>
+    <div class="mt-4">
+      <div class="d-flex gap-3">
+        <app-age-widget [lowerLimit]="0" [upperLimit]="1"></app-age-widget>
+        <app-age-widget [lowerLimit]="1" [upperLimit]="3"></app-age-widget>
+        <app-age-widget [lowerLimit]="3" [upperLimit]="6"></app-age-widget>
+        <app-age-widget [lowerLimit]="6" [upperLimit]="9"></app-age-widget>
+        <app-age-widget [lowerLimit]="9" [upperLimit]="12"></app-age-widget>
+        <app-age-widget [lowerLimit]="12"></app-age-widget>
+      </div>
+    </div>
+  </div>
+
+  <div class="section mt-5">
+    <div class="title">Best Sellers for 3-6 Years Old</div>
+    <div class="mt-2">
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks()">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">New Arrival for 3-6 Years Old</div>
+    <div class="mt-2">
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks()">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">Peppa Pig</div>
+    <div class="mt-2">
+      <app-hemant-slider [gap]="'2rem'" [width]="190">
+        <ng-container *ngFor="let book of getBooks()">
+          <app-book-widget [book]="book"></app-book-widget>
+        </ng-container>
+      </app-hemant-slider>
+    </div>
+  </div>
+</section>
+<div class="mt-5">
+  <app-my-footer></app-my-footer>
+</div>
+a

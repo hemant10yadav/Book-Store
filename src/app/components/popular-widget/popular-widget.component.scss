@@ -1,14 +1,15 @@
 .widget {
   opacity: 40%;
+  height: 360px;
   &:hover {
     img {
       width: 100%;
-      border: 2px solid transparent;
-      outline: white solid 3px;
-      border-radius: 12px;
+      //border: 2px solid transparent;
+      //outline: white solid 3px;
+      //border-radius: 12px;
     }
     opacity: 1;
-    width: 240px;
+    width: 220px;
     height: 331.107px;
     animation: enlarge 0.9s;
   }
@@ -21,7 +22,7 @@
 
   100% {
     opacity: 1;
-    width: 240px;
+    width: 220px;
     height: 331.107px;
   }
 }

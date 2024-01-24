@@ -15,7 +15,7 @@
       </div>
     </div> -->
   </div>
-  <div [ngClass]="!index ? 'start-0' : 'index'" class="widget-body">
+  <div [ngClass]="[!index ? 'start-0' : 'index', mode]" class="widget-body">
     <img [src]="book.image" alt="book" />
     <div class="p-2">
       <span class="mt-2 d-block fs-16 fw-600">{{ book.title }}</span>
@@ -24,13 +24,11 @@
       </div>
       <div class="widget-button">
         <app-wish-list-button
+          [color]="mode === 'dark' ? 'white' : 'blue'"
           [buttonWidth]="'w-100'"
           [topMargin]="'mt-3'"
         ></app-wish-list-button>
       </div>
     </div>
   </div>
-
-
-
 </div>

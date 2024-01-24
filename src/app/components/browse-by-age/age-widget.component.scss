@@ -1,0 +1,16 @@
+.widget {
+  height: 70px;
+  width: 74px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: white;
+
+  &:hover {
+    background: #EDF2FF;
+    color: rgba(59, 114, 255, 1);
+  }
+}
+
+.nv-10 {
+ margin-top: -10px;
+}
