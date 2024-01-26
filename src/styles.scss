@@ -71,4 +71,17 @@
 
 .fs-36 {
   font-size: 2.25rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+}
+
+.book-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 70px;
+  width: 153px;
 }

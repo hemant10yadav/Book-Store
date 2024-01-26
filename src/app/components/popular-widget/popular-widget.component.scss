@@ -2,16 +2,18 @@
   opacity: 40%;
   height: 360px;
   &:hover {
-    img {
-      width: 100%;
-      //border: 2px solid transparent;
-      //outline: white solid 3px;
-      //border-radius: 12px;
-    }
     opacity: 1;
-    width: 220px;
-    height: 331.107px;
-    animation: enlarge 0.9s;
+    img {
+      margin: 3px;
+      border: 5px solid transparent;
+      outline: white solid 3px;
+      height: 250px;
+      width: 200px;
+      animation: enlarge 0.9s;
+    }
+  }
+  img {
+    border-radius: 35px;
   }
 }
 
@@ -21,8 +23,10 @@
   }
 
   100% {
+    border: 5px solid transparent;
+    outline: white solid 3px;
+    height: 250px;
+    width: 200px;
     opacity: 1;
-    width: 220px;
-    height: 331.107px;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Book, NewArrival } from '../../../utils/types';
+import { Book, NewArrival, RestCategoryData } from '../../../utils/types';
 import { ContentService } from '../../service/content.service';
+import { BookService } from '../../service/book.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,13 @@ import { ContentService } from '../../service/content.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  private age = 5;
+  public topSellerBooks!: Book[];
+  public popularBooks!: Book[];
+  public genreBooks!: Book[];
+
+  public teachersPick!: Book[];
+
   public data: {
     popular: Book[];
     top: Book[];
@@ -24,9 +32,18 @@ export class HomeComponent implements OnInit {
     best: [],
   };
   public window = window;
-  constructor(private cs: ContentService) {}
+  public ageGroup = this.cs.ageGroup;
+  constructor(
+    private cs: ContentService,
+    private bookService: BookService,
+  ) {}
 
   public ngOnInit(): void {
+    this.getTopSellerBooks();
+    this.getPopularBooks();
+    //this.getGenreBooks();
+    this.getMustReadBooks();
+    this.getTeachersPick();
     this.data.best = this.cs.getBooks().slice(0, 12);
     this.data.new = this.cs.getBooks();
     this.data.peppa = this.cs.getBooks().slice(0, 10);
@@ -35,8 +52,44 @@ export class HomeComponent implements OnInit {
     this.data.popular = this.cs.getBooks().slice(0, 15);
   }
 
-
   public getNewArrivals(): NewArrival[] {
     return this.cs.newArrivals;
+  }
+  public getTopSellerBooks(): void {
+    this.bookService.getTopSellerBooks(this.age).subscribe({
+      next: (res: RestCategoryData) =>
+        (this.topSellerBooks = res?.book_set[0]?.books),
+      error: (err) => console.log(err),
+    });
+  }
+
+  private getPopularBooks(): void {
+    this.bookService.getPopularBooks(this.age).subscribe({
+      next: (res: RestCategoryData) =>
+        (this.popularBooks = res?.book_set[0]?.books),
+      error: (err) => console.log(err),
+    });
+  }
+
+  private getGenreBooks(): void {
+    this.bookService.getBooksPickByTeachers(this.age).subscribe({
+      next: (res: RestCategoryData) =>
+        (this.genreBooks = res?.book_set[0]?.books),
+      error: (err) => console.log(err),
+    });
+  }
+  private getMustReadBooks(): void {
+    this.bookService.getMustReadBooks(this.age).subscribe({
+      next: (res: RestCategoryData) => console.log(res),
+      error: (err) => console.log(err),
+    });
+  }
+
+  private getTeachersPick(): void {
+    this.bookService.getBooksPickByTeachers(this.age).subscribe({
+      next: (res: RestCategoryData) =>
+        (this.teachersPick = res?.book_set[0].books),
+      error: (err) => console.log(err),
+    });
   }
 }

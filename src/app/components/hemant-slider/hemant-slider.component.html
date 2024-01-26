@@ -6,14 +6,14 @@
   <div
     (click)="left(scrollable)"
     *ngIf="rightVisible"
-    class="round-button left clickable"
+    class="round-button left clickable d-none d-sm-flex"
   >
     <i class="bi bi-chevron-left"></i>
   </div>
   <div
     (click)="right(scrollable)"
     *ngIf="rightVisible + scrollable.clientWidth < scrollable.scrollWidth - 1"
-    class="round-button right  clickable"
+    class="round-button right  clickable d-none d-sm-flex"
   >
     <i class="bi bi-chevron-right"></i>
   </div>

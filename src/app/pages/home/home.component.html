@@ -1,5 +1,5 @@
 <section class="pb-5">
-  <div class="mt-4">
+  <div class="mt-4 d-none d-sm-block">
     <app-hemant-slider [width]="window.screen.width / 2">
       <ng-container *ngFor="let arrival of getNewArrivals(); index as i">
         <app-new-arrival-widget
@@ -10,56 +10,38 @@
     </app-hemant-slider>
   </div>
 
-  <div class="mt-5 gradient position-relative d-grid px-5">
-    <div class="title d-none d-md-block">Browse by Age Group</div>
-    <div
-      class="d-flex flex-wrap justify-content-between w-100 pe-5 me-5 mt-4 mt-md-0"
-    >
-      <img
-        alt="child image"
-        class="mt-auto d-none d-lg-block"
-        src="assets/img/child1.png"
-        style="height: 112px"
-      />
-      <div class="age-box d-flex gap-3 mt-auto">
-        <app-age-widget [lowerLimit]="0" [upperLimit]="1"> </app-age-widget>
-        <app-age-widget [lowerLimit]="1" [upperLimit]="3"> </app-age-widget>
+  <div class="mt-5 gradient px-3">
+    <app-hemant-slider [width]="window.screen.width / 2">
+      <div>
+        <div class="title">Browse by Age Group</div>
+        <div class="d-flex gap-5 justify-content-between w-100">
+          <ng-container *ngFor="let obj of ageGroup">
+            <img
+              draggable="false"
+              alt="child image"
+              class="mt-auto"
+              [src]="obj.imageSrc"
+              [height]="obj.height"
+            />
+            <div
+              *ngFor="let age of obj.ageGroup"
+              class="age-box d-flex mt-auto gap-3"
+            >
+              <app-age-widget [lowerLimit]="age" [upperLimit]="age + 1">
+              </app-age-widget>
+            </div>
+          </ng-container>
+        </div>
       </div>
-      <img
-        alt="child image"
-        class="mt-auto d-none d-lg-block"
-        src="assets/img/child2.png"
-        style="height: 115px"
-      />
-      <div class="age-box d-flex gap-3 mt-auto">
-        <app-age-widget [lowerLimit]="3" [upperLimit]="6"> </app-age-widget>
-        <app-age-widget [lowerLimit]="6" [upperLimit]="9"> </app-age-widget>
-      </div>
-      <img
-        alt="child image"
-        class="mt-auto d-none d-lg-block"
-        src="assets/img/child3.png"
-        style="height: 173px"
-      />
-      <div class="age-box d-flex gap-3 mt-auto me-lg-5 pe-lg-5">
-        <app-age-widget [lowerLimit]="9" [upperLimit]="12"> </app-age-widget>
-        <app-age-widget [lowerLimit]="12"></app-age-widget>
-      </div>
-      <img
-        alt="child image"
-        class="mt-auto position-absolute bottom-0 last-img d-none d-lg-block"
-        src="assets/img/child4.png"
-        style="height: 200px"
-      />
-    </div>
+    </app-hemant-slider>
   </div>
 
-  <div class="section mt-5">
+  <div *ngIf="topSellerBooks" class="section mt-5">
     <div class="title">Top 10 Books</div>
     <div>
       <app-hemant-slider [width]="window.screen.width / 2">
-        <ng-container *ngFor="let book of data.top; index as i">
-          <app-book-widget [book]="book" [index]="i + 1"></app-book-widget>
+        <ng-container *ngFor="let book of topSellerBooks; index as i">
+          <app-book-widget [book]="book"></app-book-widget>
         </ng-container>
       </app-hemant-slider>
     </div>
@@ -70,7 +52,7 @@
       <div class="title text-white">Popular Series</div>
       <div class="mt-5">
         <app-hemant-slider [gap]="'3rem'" [width]="window.screen.width / 2">
-          <ng-container *ngFor="let book of data?.popular; index as i">
+          <ng-container *ngFor="let book of popularBooks; index as i">
             <app-popular-widget
               [book]="book"
               [mode]="'dark'"
@@ -83,10 +65,10 @@
     <hr class="border border-1 border-white app-x-margin" />
 
     <div class="section mt-5">
-      <div class="title text-white">Elephant and Piggie</div>
+      <div class="title text-white">Teachers Pick</div>
       <div class="mt-2">
         <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
-          <ng-container *ngFor="let book of data.elephant; index as i">
+          <ng-container *ngFor="let book of teachersPick; index as i">
             <app-book-widget [book]="book" [mode]="'dark'"></app-book-widget>
           </ng-container>
         </app-hemant-slider>
