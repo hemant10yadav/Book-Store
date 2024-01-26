@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Book, NewArrival, RestCategoryData } from '../../../utils/types';
+import {
+  Book,
+  BookCategory,
+  NewArrival,
+  RestCategoryData,
+} from '../../../utils/types';
 import { ContentService } from '../../service/content.service';
 import { BookService } from '../../service/book.service';
 
@@ -13,8 +18,10 @@ export class HomeComponent implements OnInit {
   public topSellerBooks!: Book[];
   public popularBooks!: Book[];
   public genreBooks!: Book[];
-
   public teachersPick!: Book[];
+  public window = window;
+  public ageGroup = this.cs.ageGroup;
+  public mustReads!: BookCategory[];
 
   public data: {
     popular: Book[];
@@ -31,8 +38,7 @@ export class HomeComponent implements OnInit {
     new: [],
     best: [],
   };
-  public window = window;
-  public ageGroup = this.cs.ageGroup;
+
   constructor(
     private cs: ContentService,
     private bookService: BookService,
@@ -80,7 +86,7 @@ export class HomeComponent implements OnInit {
   }
   private getMustReadBooks(): void {
     this.bookService.getMustReadBooks(this.age).subscribe({
-      next: (res: RestCategoryData) => console.log(res),
+      next: (res: RestCategoryData) => (this.mustReads = res?.book_set),
       error: (err) => console.log(err),
     });
   }

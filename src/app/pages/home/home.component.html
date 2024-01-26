@@ -76,37 +76,19 @@
     </div>
   </div>
 
-  <div class="section mt-5">
-    <div class="title">Best Sellers</div>
-    <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
-        <ng-container *ngFor="let book of data.best; index as i">
-          <app-book-widget [book]="book"></app-book-widget>
-        </ng-container>
-      </app-hemant-slider>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="title">New Arrivals</div>
-    <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
-        <ng-container *ngFor="let book of data?.new; index as i">
-          <app-book-widget [book]="book"></app-book-widget>
-        </ng-container>
-      </app-hemant-slider>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="title">Peppa Pig</div>
-    <div class="mt-2">
-      <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
-        <ng-container *ngFor="let book of data?.peppa; index as i">
-          <app-book-widget [book]="book"></app-book-widget>
-        </ng-container>
-      </app-hemant-slider>
-    </div>
-  </div>
+  <ng-container *ngIf="mustReads">
+    <ng-container *ngFor="let category of mustReads">
+      <div *ngIf="category.books.length" class="section mt-5">
+        <div class="title">{{ category.category }}</div>
+        <div class="mt-2">
+          <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
+            <ng-container *ngFor="let book of category.books; index as i">
+              <app-book-widget [book]="book"></app-book-widget>
+            </ng-container>
+          </app-hemant-slider>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
 </section>
 <app-my-footer></app-my-footer>

@@ -6,9 +6,9 @@
     </div>
     <div class="mt-3 ms-3">
       <app-hemant-slider
-        gap="2rem"
         *ngIf="activeAge"
         [width]="window.screen.width / 2"
+        gap="2rem"
       >
         <ng-container *ngFor="let ageGrp of ageGroups">
           <app-age-widget
@@ -27,7 +27,7 @@
       <ng-container
         *ngFor="let cat of mustReadCategory; trackBy: trackCategories"
       >
-        <div class="section mt-3">
+        <div *ngIf="cat.books.length" class="section mt-3">
           <div class="title">{{ cat.category }}</div>
           <div class="mt-2">
             <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
@@ -42,15 +42,15 @@
   </section>
 
   <section
-    infinite-scroll
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="50"
     (scrolled)="onScroll()"
     [infiniteScrollDisabled]="pending || noMoreData"
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    infinite-scroll
   >
     <ng-container *ngIf="categories">
       <ng-container *ngFor="let cat of categories; trackBy: trackCategories">
-        <div class="section mt-3">
+        <div *ngIf="cat.books.length" class="section mt-3">
           <div class="title">{{ cat.category }}</div>
           <div class="mt-2">
             <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
