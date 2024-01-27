@@ -98,4 +98,18 @@ export class HomeComponent implements OnInit {
       error: (err) => console.log(err),
     });
   }
+
+  private getScreenObject(): Screen {
+    return window.screen;
+  }
+
+  public getCalculatedValue(smallScreenValue: any, largeScreenValue: any): any {
+    return this.getScreenObject()?.width < 600
+      ? smallScreenValue
+      : largeScreenValue;
+  }
+
+  public getScrollPerClick(): number {
+    return this.getScreenObject()?.width / 2;
+  }
 }

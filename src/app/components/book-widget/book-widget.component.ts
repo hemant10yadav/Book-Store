@@ -8,6 +8,6 @@ import { Book } from '../../../utils/types';
 })
 export class BookWidgetComponent {
   @Input() public book!: Book;
-  @Input() public index!: number;
+  @Input() public index!: number | null;
   @Input() mode: 'light' | 'dark' = 'light';
 }

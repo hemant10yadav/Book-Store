@@ -11,10 +11,13 @@
   </div>
 
   <div class="mt-5 gradient px-3">
-    <app-hemant-slider [width]="window.screen.width / 2">
+    <app-hemant-slider>
       <div>
         <div class="title">Browse by Age Group</div>
-        <div class="d-flex gap-5 justify-content-between w-100">
+        <div
+          class="d-flex justify-content-between w-100"
+          [ngStyle]="{ gap: getCalculatedValue('1rem', '5rem') }"
+        >
           <ng-container *ngFor="let obj of ageGroup">
             <img
               draggable="false"
@@ -39,9 +42,15 @@
   <div *ngIf="topSellerBooks" class="section mt-5">
     <div class="title">Top 10 Books</div>
     <div>
-      <app-hemant-slider [width]="window.screen.width / 2">
+      <app-hemant-slider
+        [gap]="getCalculatedValue('1rem', '5rem')"
+        [width]="window.screen.width / 2"
+      >
         <ng-container *ngFor="let book of topSellerBooks; index as i">
-          <app-book-widget [book]="book"></app-book-widget>
+          <app-book-widget
+            [index]="getCalculatedValue(null, i+1)"
+            [book]="book"
+          ></app-book-widget>
         </ng-container>
       </app-hemant-slider>
     </div>
@@ -51,7 +60,7 @@
     <div class="section pt-6">
       <div class="title text-white">Popular Series</div>
       <div class="mt-5">
-        <app-hemant-slider [gap]="'3rem'" [width]="window.screen.width / 2">
+        <app-hemant-slider [gap]="getCalculatedValue('1rem', '3rem')">
           <ng-container *ngFor="let book of popularBooks; index as i">
             <app-popular-widget
               [book]="book"
@@ -67,7 +76,7 @@
     <div class="section mt-5">
       <div class="title text-white">Teachers Pick</div>
       <div class="mt-2">
-        <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
+        <app-hemant-slider [gap]="getCalculatedValue('1rem', '2rem')">
           <ng-container *ngFor="let book of teachersPick; index as i">
             <app-book-widget [book]="book" [mode]="'dark'"></app-book-widget>
           </ng-container>
@@ -81,7 +90,7 @@
       <div *ngIf="category.books.length" class="section mt-5">
         <div class="title">{{ category.category }}</div>
         <div class="mt-2">
-          <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
+          <app-hemant-slider [gap]="getCalculatedValue('1rem', '2rem')">
             <ng-container *ngFor="let book of category.books; index as i">
               <app-book-widget [book]="book"></app-book-widget>
             </ng-container>
