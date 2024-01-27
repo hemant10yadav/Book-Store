@@ -33,7 +33,8 @@ export class BrowseByAgeComponent implements OnInit {
   public async ngOnInit() {
     await this.actRoute.queryParams.subscribe(async (param: Params) => {
       this.lastPageNumberFetched = 0;
-      this.categories = [] as unknown as BookCategory[];
+      this.categories = [];
+      this.mustReadCategory = [];
       const { age } = param;
       this.activeAge = { lower: 0, upper: undefined };
       this.setAgeValues(age);

@@ -1,5 +1,5 @@
 <section>
-  <div class="app-x-margin mt-5 pb-5">
+  <div class="app-x-margin mt-3 pb-5">
     <div>
       <i (click)="back()" class="clickable bi bi-chevron-left fs-24"></i>
       <span class="ms-3 fs-36 fw-600">Browse By Age Group</span>
@@ -7,8 +7,7 @@
     <div class="mt-3 ms-3">
       <app-hemant-slider
         *ngIf="activeAge"
-        [width]="window.screen.width / 2"
-        gap="2rem"
+        [gap]="window.length < 6000 ? '1rem' : '2rem'"
       >
         <ng-container *ngFor="let ageGrp of ageGroups">
           <app-age-widget
@@ -30,7 +29,7 @@
         <div *ngIf="cat.books.length" class="section mt-3">
           <div class="title">{{ cat.category }}</div>
           <div class="mt-2">
-            <app-hemant-slider [gap]="'2rem'" [width]="window.screen.width / 2">
+            <app-hemant-slider [gap]="window.length < 6000 ? '1rem' : '2rem'">
               <ng-container *ngFor="let book of cat.books; trackBy: trackBooks">
                 <app-book-widget [book]="book"></app-book-widget>
               </ng-container>

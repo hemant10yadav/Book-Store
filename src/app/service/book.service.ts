@@ -17,6 +17,8 @@ export class BookService {
   public mustReadUrl = '/get-must-read-set';
   public teacherPickUrl = '/getTeacherPicksByAge';
 
+  public searchBookUrl = '/search-new-books';
+
   public getBrowseSeriesBooks(
     age: number,
     page = 1,
@@ -87,5 +89,11 @@ export class BookService {
     predicates.push(new Predicate('book_count', bookCount));
     predicates.push(new Predicate('show_unavailable', true));
     return this.api.get(this.mustReadUrl, predicates);
+  }
+
+  public searchBooks(searchQuery: string): Observable<RestCategoryData> {
+    return this.api.get(this.searchBookUrl, [
+      new Predicate('search_query', searchQuery),
+    ]);
   }
 }

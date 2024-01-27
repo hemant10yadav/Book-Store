@@ -9,6 +9,7 @@ import { SharedModule } from './components/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgOptimizedImage } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, NavigationBarComponent],
@@ -20,6 +21,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     HttpClientModule,
     NgOptimizedImage,
     InfiniteScrollModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

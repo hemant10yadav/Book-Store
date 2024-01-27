@@ -10,13 +10,13 @@
     </app-hemant-slider>
   </div>
 
-  <div class="mt-5 gradient px-3">
+  <div class="mt-0 mt-sm-5 gradient px-3">
     <app-hemant-slider>
       <div>
         <div class="title">Browse by Age Group</div>
         <div
           class="d-flex justify-content-between w-100"
-          [ngStyle]="{ gap: getCalculatedValue('1rem', '5rem') }"
+          [ngStyle]="{ gap: getCalculatedValue('1rem', '3rem') }"
         >
           <ng-container *ngFor="let obj of ageGroup">
             <img

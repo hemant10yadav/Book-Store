@@ -9,6 +9,7 @@ import { PopularWidgetComponent } from './popular-widget/popular-widget.componen
 import { AppFooterComponent } from './my-footer/app-footer.component';
 import { AgeWidgetComponent } from './browse-by-age/age-widget.component';
 import { PageLoaderComponent } from './page-loader/page-loader.component';
+import { SearchWidgetComponent } from './search-widget/search-widget.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
     PopularWidgetComponent,
     AppFooterComponent,
     PageLoaderComponent,
+    SearchWidgetComponent,
   ],
   exports: [
     NewArrivalWidgetComponent,
@@ -32,6 +34,7 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
     PopularWidgetComponent,
     AppFooterComponent,
     PageLoaderComponent,
+    SearchWidgetComponent
   ],
   imports: [CommonModule, NgOptimizedImage],
 })

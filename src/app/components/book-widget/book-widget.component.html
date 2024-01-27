@@ -12,6 +12,7 @@
     </div>
     <div [ngClass]="[!index ? 'start-0' : 'index', mode]" class="widget-body">
       <img
+        ngNoValidate
         draggable="false"
         #img
         (error)="img.src = 'assets/img/book3.png'"

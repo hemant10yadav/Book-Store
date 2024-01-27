@@ -10,4 +10,11 @@ export class RatingComponent {
   public ratings!: string;
   @Input()
   public user!: number;
+
+  @Input()
+  size: 'sm' | 'lg' = 'lg';
+
+  public getEvalClass(trueCond: string, falseCond: string): any {
+    return this.size === 'sm' ? trueCond : falseCond;
+  }
 }

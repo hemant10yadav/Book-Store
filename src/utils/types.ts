@@ -14,6 +14,10 @@ export type Book = {
   review_count: number;
   image: string;
   book_order: number;
+  max_age?: number;
+  min_age?: number;
+
+  categories?: any;
 };
 
 export type BookCategory = {

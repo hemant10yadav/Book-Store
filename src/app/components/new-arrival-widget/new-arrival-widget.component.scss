@@ -51,21 +51,7 @@
   }
 }
 
-.arrival {
-  background: #3b72ff1f;
-  font-size: 12px;
-  color: #3b72ff;
-  border-radius: 6px;
-  padding: 2px 8px;
-}
 
-.age-group {
-  font-size: 12px;
-  border: 2px solid #3b72ff1f;
-  border-radius: 6px;
-  color: #3b72ff;
-  padding: 2px 8px;
-}
 
 .title {
   margin-top: 10px;
@@ -74,3 +60,17 @@
 .separator {
   height: 16px;
 }
+
+/*.searchResult::-webkit-scrollbar {
+  width: 8px;               !* width of the entire scrollbar *!
+}
+
+.searchResult::-webkit-scrollbar-track {
+  background: orange;        !* color of the tracking area *!
+}
+
+.searchResult::-webkit-scrollbar-thumb {
+  background-color: blue;    !* color of the scroll thumb *!
+  border-radius: 20px;       !* roundness of the scroll thumb *!
+  border: 3px solid orange;  !* creates padding around scroll thumb *!
+}*/

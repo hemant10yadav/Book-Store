@@ -33,29 +33,35 @@
   }
 }
 
-.collapsedSearch {
-  display: none;
-}
-
 @media (max-width: 767px) {
   .navbar-collapse {
-    position: unset !important;
+    bottom: unset !important;
+    padding-left: 1rem;
+    background: white !important;
   }
 }
 
 @media (max-width: 638px) {
+  .navbar-brand {
+    order: 1;
+  }
+  .navbar-toggler {
+    order: 2;
+  }
+  .navSearch {
+    order: 3;
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
   .collapsedSearch {
     display: flex;
     width: 100%;
   }
-  .navSearch {
-    display: none;
-  }
 }
 
 .search-box {
+  max-width: 605px;
   input {
-    width: 320px;
     height: 42px;
   }
 }
@@ -64,16 +70,14 @@
   color: #3b72ff !important;
 }
 
-/*
-nav {
-  .navbar-collapse.show {
-    display: none;
-  }
+.searchResult {
+  max-height: 50vh;
+  z-index: 1000;
+  top: 82%;
+  width: 100%;
+  border-radius: 0 0 6px 6px;
 }
 
-nav:hover {
-  .navbar-collapse.show {
-    display: block;
-  }
+.app-logo {
+  height: 32px;
 }
-*/
