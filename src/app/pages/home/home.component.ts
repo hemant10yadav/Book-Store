@@ -15,7 +15,7 @@ import { BookService } from '../../service/book.service';
 })
 export class HomeComponent implements OnInit {
   private age = 5;
-  public topSellerBooks!: Book[];
+  public topSellerBooks!: any[];
   public popularBooks!: Book[];
   public genreBooks!: Book[];
   public teachersPick!: Book[];
@@ -63,38 +63,44 @@ export class HomeComponent implements OnInit {
   }
   public getTopSellerBooks(): void {
     this.bookService.getTopSellerBooks(this.age).subscribe({
-      next: (res: RestCategoryData) =>
-        (this.topSellerBooks = res?.book_set[0]?.books),
+      next: (res: any) =>{
+        console.log("topseller");
+        console.log("@@@@@");
+        
+        this.topSellerBooks = res.items
+        console.log("topseller");
+        console.log(this.topSellerBooks);
+      },
       error: (err) => console.log(err),
     });
   }
 
   private getPopularBooks(): void {
     this.bookService.getPopularBooks(this.age).subscribe({
-      next: (res: RestCategoryData) =>
-        (this.popularBooks = res?.book_set[0]?.books),
+      next: (res: any) =>
+        (this.popularBooks = res.items),
       error: (err) => console.log(err),
     });
   }
 
   private getGenreBooks(): void {
     this.bookService.getBooksPickByTeachers(this.age).subscribe({
-      next: (res: RestCategoryData) =>
-        (this.genreBooks = res?.book_set[0]?.books),
+      next: (res: any) =>
+        (this.genreBooks = res.items),
       error: (err) => console.log(err),
     });
   }
   private getMustReadBooks(): void {
     this.bookService.getMustReadBooks(this.age).subscribe({
-      next: (res: RestCategoryData) => (this.mustReads = res?.book_set),
+      next: (res: any) => (this.mustReads = res.items),
       error: (err) => console.log(err),
     });
   }
 
   private getTeachersPick(): void {
     this.bookService.getBooksPickByTeachers(this.age).subscribe({
-      next: (res: RestCategoryData) =>
-        (this.teachersPick = res?.book_set[0].books),
+      next: (res: any) =>
+        (this.teachersPick = res.items),
       error: (err) => console.log(err),
     });
   }

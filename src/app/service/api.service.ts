@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Predicate } from '../../utils/types';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { Predicate } from '../../utils/types';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  public apiUrl = '/api_v2_books';
+  public apiUrl = 'https://www.googleapis.com/books/v1/';
   private headers = new HttpHeaders({
     Accept: 'application/json, text/plain, */*',
   });
@@ -18,7 +19,7 @@ export class ApiService {
     if (queryParams != null) {
       url = this.addQueryParams(url, queryParams);
     }
-    return this.http.get<U>(`${this.apiUrl}${url}`, { headers: this.headers });
+    return this.http.get<U>(`${this.apiUrl}${url}&key=${environment.apiKey}`, { headers: this.headers });
   }
 
   public put<U>(url: string, data: Object): Observable<U> {

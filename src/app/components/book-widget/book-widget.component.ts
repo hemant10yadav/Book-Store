@@ -7,7 +7,7 @@ import { Book } from '../../../utils/types';
   styleUrls: ['./book-widget.component.scss'],
 })
 export class BookWidgetComponent {
-  @Input() public book!: Book;
+  @Input() public book!: any;
   @Input() public index!: number | null;
   @Input() mode: 'light' | 'dark' = 'light';
 }

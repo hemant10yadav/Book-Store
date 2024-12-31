@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { count, Observable } from 'rxjs';
+import {Observable } from 'rxjs';
 import { Predicate, RestCategoryData } from '../../utils/types';
 import { PredicateUtils } from '../../utils/PredicateUtils';
+
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +42,7 @@ export class BookService {
     const predicate: Predicate[] = PredicateUtils.getAgePageSizePredicate(age);
     predicate.push(new Predicate('count', count));
     predicate.push(new Predicate('category_limit', categoryLimit));
-    return this.api.get(this.topSellerUrl, predicate);
+    return this.api.get("volumes?q=subject:fiction&orderBy=relevance&maxResults=10&key=AIzaSyCTMYcu2sKymPYh9eU7gn7641l4mKbi31I");
   }
 
   public getPopularBooks(
@@ -52,7 +53,7 @@ export class BookService {
     const predicate: Predicate[] = PredicateUtils.getAgePageSizePredicate(age);
     predicate.push(new Predicate('count', count));
     predicate.push(new Predicate('category_limit', categoryLimit));
-    return this.api.get(this.popularUrl, predicate);
+    return this.api.get("volumes?q=kid&maxResults=20&orderBy=relevance");
   }
 
   public getBooksByGenre(
@@ -73,8 +74,7 @@ export class BookService {
     pageSize = 20,
   ): Observable<RestCategoryData> {
     return this.api.get(
-      this.teacherPickUrl,
-      PredicateUtils.getAgePageSizePredicate(age),
+      "volumes?q=Mystery&maxResults=20&orderBy=relevance"
     );
   }
 
@@ -88,7 +88,7 @@ export class BookService {
     predicates.push(new Predicate('section_name', 'Best Seller Series'));
     predicates.push(new Predicate('book_count', bookCount));
     predicates.push(new Predicate('show_unavailable', true));
-    return this.api.get(this.mustReadUrl, predicates);
+    return this.api.get("volumes?qgames&maxResults=20&orderBy=relevance");
   }
 
   public searchBooks(searchQuery: string): Observable<RestCategoryData> {

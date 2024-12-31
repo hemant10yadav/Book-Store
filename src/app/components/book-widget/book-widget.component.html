@@ -16,19 +16,19 @@
         draggable="false"
         #img
         (error)="img.src = 'assets/img/book3.png'"
-        [ngSrc]="book.image"
+        [ngSrc]="book.volumeInfo.imageLinks.thumbnail"
         alt="book"
         height="194"
         width="170"
       />
       <div class="p-2">
         <div [title]="book.name" class="mt-2 fs-16 fw-600 book-name">
-          {{ book.name }}
+          {{ book.volumeInfo.title }}
         </div>
         <div class="mt-1">
           <app-rating
-            [ratings]="book.rating"
-            [user]="book.review_count"
+            [ratings]="book.volumeInfo.averageRating"
+            [user]="book.volumeInfo.ratingsCount"
           ></app-rating>
         </div>
         <div class="widget-button">

@@ -7,12 +7,12 @@
       width="170"
       #img
       [alt]="book.name"
-      [ngSrc]="book.image"
+      [ngSrc]="book.volumeInfo.imageLinks.thumbnail"
       (error)="img.src = 'assets/img/book3.png'"
     />
     <div class="mt-2">
-      <div class="fs-16 book-name">{{ book.name }}</div>
-      <span class="fs-14 mt-3 d-block">{{ book.book_order }} books</span>
+      <div class="fs-16 book-name">{{ book.volumeInfo.title }}</div>
+      <span class="fs-14 mt-3 d-block">{{ book.volumeInfo.ratingsCount }} books</span>
     </div>
   </div>
 </div>

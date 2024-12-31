@@ -32,6 +32,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -61,12 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "book-store:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "book-store:build:production"
             },
             "development": {
-              "browserTarget": "book-store:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "book-store:build:development"
             }
           },
           "defaultConfiguration": "development"

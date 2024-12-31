@@ -7,6 +7,6 @@ import { Book } from '../../../utils/types';
   styleUrls: ['./popular-widget.component.scss'],
 })
 export class PopularWidgetComponent {
-  @Input() public book!: Book;
+  @Input() public book!: any;
   @Input() mode: 'light' | 'dark' = 'light';
 }
