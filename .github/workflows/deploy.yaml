@@ -3,33 +3,35 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger deploy only on changes to the 'main' branch
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Using an Ubuntu runner
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Checkout the repository to the GitHub runner
+      uses: actions/checkout@v2
     
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '21'  # Specify Node.js version (LTS recommended, e.g., v16)
+        node-version: '21'
 
     - name: Install dependencies
-      run: npm install  # Install all project dependencies
+      run: |
+        npm install
+        npm install -g @angular/cli  # Add this line to install Angular CLI globally
 
     - name: Build the Angular app
-      run: ng build --configuration=production --base-href="https://hemant10yadav.github.io/book-store/"  # Build with production configuration and correct base-href
+      run: ng build --configuration=production --base-href="https://hemant10yadav.github.io/book-store/"
 
     - name: Add .nojekyll file
-      run: echo > dist/book-store/.nojekyll  # Create the .nojekyll file to prevent GitHub Pages from ignoring files starting with "_"
+      run: echo > dist/book-store/.nojekyll
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages  # Deploy to the gh-pages branch
-        folder: dist/book-store  # Path to the build output
-        clean: true  # Clean the previous deployment
+        branch: gh-pages
+        folder: dist/book-store
+        clean: true
