@@ -27,8 +27,8 @@ jobs:
         npm install -g @angular/cli
 
     - name: Inject API Key
-          run: |
-            echo "export const environment = { production: true, apiKey: '${{ secrets.REST_API_KEY }}' };" > src/environments/environment.prod.ts
+      run: |
+        echo "export const environment = { production: true, apiKey: '${{ secrets.REST_API_KEY }}' };" > src/environments/environment.prod.ts
 
     - name: Build the Angular app
       run: ng build --configuration=production --base-href="https://hemant10yadav.github.io/book-store/"
