@@ -1,8 +1,0 @@
-{
-  "/api_v2_books": {
-    "target": "https://server.brightr.club",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
-  }
-}
